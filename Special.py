@@ -17,5 +17,17 @@ messages = [
     "You’re the best thing that ever happened to me ❤️",
 ]
 
+# Keep track of how many times she clicked
+if "clicks" not in st.session_state:
+    st.session_state.clicks = 0
+
 if st.button("💌 Click me for a surprise"):
-    st.success(random.choice(messages))
+    st.session_state.clicks += 1
+    if st.session_state.clicks < 5:
+        st.success(random.choice(messages))
+    else:
+        st.balloons()
+        st.markdown(
+            "<h2 style='text-align:center; color:#ff1493;'>Final Message: I Love You Forever ❤️</h2>",
+            unsafe_allow_html=True,
+        )
