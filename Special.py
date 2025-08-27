@@ -1,3 +1,4 @@
+import math
 import streamlit as st
 import random
 import streamlit.components.v1 as components
@@ -105,3 +106,4 @@ elif st.session_state.clicks >= 5:
         height=300,
         scrolling=False
     )
+
